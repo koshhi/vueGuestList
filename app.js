@@ -36,7 +36,8 @@ var vm1 = new Vue ({
     formatName: function(value) {
       return value.slice(0,1).toUpperCase() + value.slice(1).toLowerCase();
     }
-  }
+  },
+  beforeCreate: {}
 });
 
 var vm2 = new Vue({
@@ -50,5 +51,10 @@ var vm2 = new Vue({
       {name: 'Latest News', id: 4, url: 'www.amazaon.com'}
     ]
   },
-  methods: {}
+  methods: {
+    changeTitle: function() {
+      this.$refs.name.hidden = true;
+      console.log(this.$refs);
+    }
+  }
 });
